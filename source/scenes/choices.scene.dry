@@ -11,7 +11,7 @@ tags: look
 view-if: crimeScene = location
 goTo: persons.moving
 
----
+{!<hr>!}
 
 Your search uncovers some conclusive evidence: a murder took place in [+ here +]!
 

@@ -1,0 +1,26 @@
+title: utilities
+onArrival: {!
+//  static data
+    Q.weapons = [
+        "waffle iron",
+        "poisoned croquembouche",
+        "spell of ancient power",
+    ];
+//  functions
+    Q.all_keys   = function(o) { return Object.keys(o); }
+    Q.pick_entry = function(a) { return a[Math.floor(Math.random() * a.length)]; }
+    Q.list_text  = function(a) {
+        let t = "";
+        let n = a.length;
+        a.forEach((v,i) => {
+            if (i) {
+                if (n > 2) { t += ","; }
+                if (i == n-1) { t += " and"; }
+                t += " ";
+            }
+            t += v;
+        })
+        return t;
+    }
+!}
+goTo: rooms

@@ -1,0 +1,60 @@
+title: choices
+
+- #look
+- #walk
+- #talk
+- @wait
+
+@look-right
+title: Search [+ here +]
+tags: look
+view-if: crimeScene = location
+goTo: persons.moving
+
+---
+
+Your search uncovers some conclusive evidence: a murder took place in [+ here +]!
+
+@look-wrong
+title: Search [+ here +]
+tags: look
+view-if: crimeScene != location
+goTo: persons.moving
+
+---
+
+No crimes seem to have happened here.
+
+@wait
+title: Wait
+goTo: persons.moving
+
+---
+
+Time passes...
+
+@accuse
+title: accuse
+onArrival: {!
+    Q.name = Q.person_name(Q.accused);
+    Q.weapon = Q.pick_entry(Q.weapons);
+!}
+goTo: win if accused = murderer and location = crimeScene; lose
+
+You accuse [+ name +].
+
+"I knew it! It was [+ name +], in [+ here +], with the [+ weapon +]!"
+
+@win
+title: win
+
+No one can fault your logic, and soon the murderer is carted away for trial.
+
+- @intro: Victory!
+
+@lose
+title: lose
+
+But your logic was unsound. The murderer goes free.
+
+- @intro: Defeat...

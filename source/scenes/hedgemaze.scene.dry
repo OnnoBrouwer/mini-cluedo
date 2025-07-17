@@ -1,0 +1,14 @@
+title: hedgemaze
+newPage: true
+onArrival: location = "hedgemaze"; here = "the hedge maze"
+goTo: persons.present
+
+**The Hedge Maze**
+
+What gruesome secrets could be hidden amidst these tangled paths?
+
+@walk
+title: Go to the hedge maze
+tags: walk
+viewIf: location != "hedgemaze"
+goTo: hedgemaze

@@ -1,0 +1,30 @@
+@question-right
+title: Question Sergeant Gray
+tags: talk
+viewIf: {! return Q.person_room("gray") == Q.location && Q.murderer == "gray"; !}
+goTo: persons.moving
+
+---
+
+You question Sergeant Gray.
+
+As you question Sergeant Gray you notice a slight nervous twitch. No doubt about it, you've found your murderer!
+
+@question-wrong
+title: Question Sergeant Gray
+tags: talk
+viewIf: {! return Q.person_room("gray") == Q.location && Q.murderer != "gray"; !}
+goTo: persons.moving
+
+---
+
+You question Sergeant Gray.
+
+"Harrumph! An officer of the law commit murder? Unthinkable! Absolutely absurd."
+
+@accuse
+title: Accuse Sergeant Gray
+tags: talk
+onArrival: accused = "gray"
+viewIf: {! return Q.person_room("gray") == Q.location; !}
+goTo: choices.accuse

@@ -1,0 +1,5 @@
+git clone https://github.com/OnnoBrouwer/mini-cluedo.git
+cd mini-cluedo
+IMAGE="node:latest"
+docker run --rm --name compiler --entrypoint bash -v .:/mini-cluedo $IMAGE /mini-cluedo/build-html.sh
+zip -j mini-cluedo.zip out/html/*

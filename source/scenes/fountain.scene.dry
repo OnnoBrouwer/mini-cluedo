@@ -1,0 +1,14 @@
+title: fountain
+newPage: true
+onArrival: location = "fountain"; here = "the fountain"
+goTo: persons.present
+
+**The Fountain**
+
+The pleasant burble of the fountain could easily cover a victim's screams.
+
+@walk
+title: Go to the fountain
+tags: walk
+viewIf: location != "fountain"
+goTo: fountain

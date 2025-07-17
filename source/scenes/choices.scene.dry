@@ -41,6 +41,8 @@ onArrival: {!
 !}
 goTo: win if accused = murderer and location = crimeScene; lose
 
+---
+
 You accuse [+ name +].
 
 "I knew it! It was [+ name +], in [+ here +], with the [+ weapon +]!"

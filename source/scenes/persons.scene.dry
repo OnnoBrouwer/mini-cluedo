@@ -1,0 +1,55 @@
+title: persons
+onArrival: {!
+//  static data
+    Q.persons = {
+        peach: { name: "Miss Peach",     verb: "flounces" },
+        brown: { name: "Reverend Brown", verb: "shuffles" },
+        gray:  { name: "Sergeant Gray",  verb: "strides"  },
+    }
+//  functions
+    Q.all_persons = function()    { return Q.all_keys(Q.persons); }
+    Q.pick_person = function()    { return Q.pick_entry(Q.all_persons()); }
+    Q.person_name = function(p)   { return Q.persons[p].name; }
+    Q.person_verb = function(p)   { return Q.persons[p].verb; }
+    Q.person_room = function(p)   { return Q.persons[p].room; }
+    Q.move_person = function(p,r) { Q.persons[p].room = r; }
+!}
+goTo: intro
+
+@present
+title: persons.present
+onArrival: {!
+    let list = Q.all_persons()
+        .filter((p) => Q.person_room(p) == Q.location)
+        .map((p) => Q.person_name(p));
+    Q.text = (list.length == 0) ? " " : "You see " + Q.list_text(list) + " here.";
+!}
+goTo: moving
+
+[+ text +]
+
+@moving
+title: persons.moving
+onArrival: {!
+    let list = [];
+    Q.all_persons().forEach((p) => {
+        let oldRoom = Q.person_room(p);
+        Q.move_person(p,Q.pick_room());
+        let newRoom = Q.person_room(p);
+        let person = Q.person_name(p);
+        let verb = Q.person_verb(p);
+        if (oldRoom == Q.location) { // starting at location
+            if (newRoom == Q.location) { // milling about
+                list.push(person + " mills about");
+            } else { // leaving
+                list.push(person + " " + verb + " away to " + Q.room_name(newRoom));
+            }
+        } else if (newRoom == Q.location) { // arriving at location
+            list.push(person + " " + verb + " in from " + Q.room_name(oldRoom));
+        }
+    });
+    Q.text = (list.length == 0) ? " " : list.join(". ") + ".";
+!}
+goTo: choices
+
+[+ text +]

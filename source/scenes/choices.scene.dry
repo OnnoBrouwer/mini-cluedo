@@ -11,7 +11,7 @@ tags: look
 view-if: crimeScene = location
 goTo: persons.moving
 
-{!<hr>!}
+---
 
 Your search uncovers some conclusive evidence: a murder took place in [+ here +]!
 
@@ -38,24 +38,15 @@ title: accuse
 onArrival: {!
     Q.name = Q.person_name(Q.accused);
     Q.weapon = Q.pick_entry(Q.weapons);
+    Q.result = (Q.accused == Q.murderer && Q.location == Q.crimeScene) ? "win" : "lose";
 !}
-goTo: win if accused = murderer and location = crimeScene; lose
+goToRef: result
 
-{!<hr>!}
+---
 
 You accuse [+ name +].
 
 "I knew it! It was [+ name +], in [+ here +], with the [+ weapon +]!"
-
-DEBUGGING
-
-Murderer: [+ murderer +]
-
-Crime Scene: [+ crimeScene +]
-
-Accused: [+ accused +]
-
-Location: [+ location +]
 
 @win
 title: win

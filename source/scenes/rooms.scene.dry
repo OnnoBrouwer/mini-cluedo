@@ -1,0 +1,14 @@
+title: rooms
+onArrival: {!
+//  static data
+    Q.rooms = {
+        hedgemaze:  { name: "the hedge maze"  },
+        fountain:   { name: "the fountain"    },
+        rosegarden: { name: "the rose garden" },
+    }
+//  functions
+    Q.all_rooms = function()  { return Q.all_keys(Q.rooms); }
+    Q.pick_room = function()  { return Q.pick_entry(Q.all_rooms()); }
+    Q.room_name = function(r) { return Q.rooms[r].name; }
+!}
+goTo: persons

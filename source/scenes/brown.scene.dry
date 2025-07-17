@@ -1,0 +1,30 @@
+@question-right
+title: Question Reverend Brown
+tags: talk
+viewIf: {! return Q.person_room("brown") == Q.location && Q.murderer == "brown"; !}
+goTo: persons.moving
+
+---
+
+You question Reverend Brown.
+
+As you question Reverend Brown you notice a slight nervous twitch. No doubt about it, you've found your murderer!
+
+@question-wrong
+title: Question Reverend Brown
+tags: talk
+viewIf: {! return Q.person_room("brown") == Q.location && Q.murderer != "brown"; !}
+goTo: persons.moving
+
+---
+
+You question Reverend Brown.
+
+He shakes his head. "May the Lord forgive you for such an insulting question."
+
+@accuse
+title: Accuse Reverend Brown
+tags: talk
+onArrival: accused = "brown"
+viewIf: {! return Q.person_room("brown") == Q.location; !}
+goTo: choices.accuse

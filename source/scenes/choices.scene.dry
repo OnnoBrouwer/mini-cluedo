@@ -47,6 +47,16 @@ You accuse [+ name +].
 
 "I knew it! It was [+ name +], in [+ here +], with the [+ weapon +]!"
 
+DEBUGGING
+
+Murderer: [+ murderer +]
+
+Crime Scene: [+ crimeScene +]
+
+Accused: [+ accused +]
+
+Location: [+ location +]
+
 @win
 title: win
 

@@ -1,0 +1,18 @@
+title: credits
+new-page: true
+
+= MINI-CLUEDO
+
+> Written by Onno Brouwer for the {!<a href="https://intfiction.org/t/lets-code-mini-cluedo/75653" target="_blank">Let's Code: Mini-Cluedo</a>!} challenge.
+
+> Coded using {!<a href="https://github.com/aucchen/dendry" target="_blank">Dendry</a>!}, originally by Ian Millington, with heavy modifications by Autumn Chen.
+
+= Acknowledgments
+
+> Original text taken from the Dialog game {!<a href="https://ifdb.org/viewgame?id=zwnijqzwab1d14vh" target="_blank">Mini-Cluedo</a>!} by {!<a href="https://ifdb.org/search?searchfor=author%3ADaniel+M.+Stelzer" target="_blank">Daniel M. Stelzer</a>!}.
+
+> The cover art is in the public domain and can be found on {!<a href="https://commons.wikimedia.org/wiki/File:Sherlock_Holmes_-_The_Man_with_the_Twisted_Lip.jpg" target="_blank">Wikimedia</a>!}.
+
+> This is a work of fiction. Any names or characters, businesses or places, events or incidents, are fictitious. Any resemblance to actual entities or actual events is purely coincidental.
+
+- @intro: Continue...

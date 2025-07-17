@@ -16,8 +16,6 @@ Could it be? A murder most foul, at this pleasant garden party? Your crime sense
 
 You've dispersed all the guests except your three suspects. Now, can you prove your suspicions before it's too late? Or is this the end of your illustrious detecting career?
 
-- @game
+- @fountain: The game is afoot!
+- @credits: Credits
 
-@game
-title: The game is afoot!
-goTo: fountain

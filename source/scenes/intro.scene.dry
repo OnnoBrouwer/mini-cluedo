@@ -1,0 +1,21 @@
+title: intro
+new-page: true
+onArrival: {!
+    Q.crimeScene = Q.pick_room();
+    Q.murderer = Q.pick_person();
+    Q.crimeSceneName = Q.room_name(Q.crimeScene);
+    Q.murdererName = Q.person_name(Q.murderer);
+    Q.all_persons().forEach((p) => { Q.move_person(p,"hedgemaze"); });
+!}
+
+= MINI-CLUEDO
+
+Could it be? A murder most foul, at this pleasant garden party? Your crime senses are tingling—it must be!
+
+You've dispersed all the guests except your three suspects. Now, can you prove your suspicions before it's too late? Or is this the end of your illustrious detecting career?
+
+- @game
+
+@game
+title: The game is afoot!
+goTo: fountain

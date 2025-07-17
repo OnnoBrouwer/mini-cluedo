@@ -38,9 +38,8 @@ title: accuse
 onArrival: {!
     Q.name = Q.person_name(Q.accused);
     Q.weapon = Q.pick_entry(Q.weapons);
-    Q.result = (Q.accused == Q.murderer && Q.location == Q.crimeScene) ? "win" : "lose";
 !}
-goToRef: result
+goTo: win if accused = murderer and location = crimeScene; lost if accused != murderer or location != crimeScene
 
 ---
 

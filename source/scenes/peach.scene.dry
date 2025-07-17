@@ -1,0 +1,30 @@
+@question-right
+title: Question Miss Peach
+tags: talk
+viewIf: {! return Q.person_room('peach') == Q.location && Q.murderer == "peach"; !}
+goTo: persons.moving
+
+---
+
+You question Miss Peach.
+
+As you question Miss Peach you notice a slight nervous twitch. No doubt about it, you've found your murderer!
+
+@question-wrong
+title: Question Miss Peach
+tags: talk
+viewIf: {! return Q.person_room('peach') == Q.location && Q.murderer != "peach"; !}
+goTo: persons.moving
+
+---
+
+You question Miss Peach.
+
+"I do declare! Bless your heart, you really thought I could do such a wicked thing?"
+
+@accuse
+title: Accuse Miss Peach
+tags: talk
+onArrival: accused = "peach"
+viewIf: {! return Q.person_room("peach") == Q.location; !}
+goTo: choices.accuse

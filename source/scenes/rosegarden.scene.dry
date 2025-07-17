@@ -1,0 +1,14 @@
+title: rosegarden
+newPage: true
+onArrival: location = "rosegarden"; here = "the rose garden"
+goTo: persons.present
+
+**The Rose Garden**
+
+The thorns are long and sharp, the petals as red as blood.
+
+@walk
+title: Go to the rose garden
+tags: walk
+viewIf: location != "rosegarden"
+goTo: rosegarden
